@@ -80,16 +80,18 @@ watch(
 </script>
 
 <template>
-  <ChatContainer />
-  <ClientOnly>
-    <div
-      class="bg-gray-900 text-white flex-1 overflow-y-auto flex h-screen w-screen absolute lg:static lg:z-0 lg:opacity-100"
-      :class="{
-        'transition-all transition-discrete opacity-0 duration-300 -z-10':
-          !activeChatId,
-      }"
-    >
-      <ChatHistory />
-    </div>
-  </ClientOnly>
+  <div class="flex h-screen w-screen bg-gray-900">
+    <ChatContainer />
+    <ClientOnly>
+      <div
+        class="bg-gray-900 text-white flex-1 overflow-y-auto flex h-screen w-screen absolute lg:static lg:z-0 lg:opacity-100"
+        :class="{
+          'transition-all transition-discrete opacity-0 duration-300 -z-10':
+            !activeChatId,
+        }"
+      >
+        <ChatHistory />
+      </div>
+    </ClientOnly>
+  </div>
 </template>

@@ -18,7 +18,7 @@ const senderIsLoggedUser = computed(() => {
 
 <template>
   <div
-    class="flex flex-col gap-1 px-4 py-2 rounded max-w-[50%] min-w-[20%]"
+    class="flex flex-col gap-1 px-4 py-2 rounded max-w-[80%] lg:max-w-[50%] min-w-[20%]"
     :class="{
       'justify-self-end bg-sky-800': senderIsLoggedUser,
       'justify-self-start bg-gray-700': senderIsClient,
@@ -26,7 +26,7 @@ const senderIsLoggedUser = computed(() => {
     }"
   >
     <p class="font-bold">{{ props.sender }}</p>
-    <audio class="my-2" :src="props.message" controls></audio>
+    <audio class="my-2 max-w-full" :src="props.message" controls></audio>
     <span class="text-gray-400 text-xs text-right">
       {{ formatChatTime(props.timestamp) }}
     </span>
